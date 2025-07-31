@@ -486,23 +486,8 @@
         <section id="attendance">
             <h2>Подтвердите ваше присутствие</h2>
             <p>Чтобы мы могли сделать праздник незабываемым, ответьте, пожалуйста, на несколько вопросов до 06.07.2025</p>
-            <form id="attendance-form" class="attendance-form" action="https://formspree.io/f/your-email" method="POST">
-                <div class="form-group">
-                    <label>Будете ли вы присутствовать на нашем торжестве?</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="attend-yes" name="attendance" value="Да, с радостью!" required>
-                            <label for="attend-yes">Да, с радостью!</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="attend-no" name="attendance" value="К сожалению, не смогу">
-                            <label for="attend-no">Не смогу</label>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn">Отправить</button>
-                <div id="form-message" class="form-message"></div>
-            </form>
+            <p>Будете ли вы присутствовать на нашем торжестве?</p>
+            <p>История, которую мы пишем вместе:</p>
         </section>
         
         <!-- Блок 6: История любви -->
@@ -619,40 +604,6 @@
             
             setInterval(updateCountdown, 1000);
             updateCountdown();
-            
-            // Обработчик формы
-            const form = document.getElementById('attendance-form');
-            const formMessage = document.getElementById('form-message');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(form);
-                
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        formMessage.textContent = 'Спасибо! Ваш ответ сохранен.';
-                        formMessage.className = 'form-message success';
-                        formMessage.style.display = 'block';
-                        form.reset();
-                    } else {
-                        throw new Error('Ошибка сети');
-                    }
-                })
-                .catch(error => {
-                    formMessage.textContent = 'Произошла ошибка. Пожалуйста, попробуйте еще раз.';
-                    formMessage.className = 'form-message error';
-                    formMessage.style.display = 'block';
-                    console.error('Error:', error);
-                });
-            });
         });
     </script>
 </body>
