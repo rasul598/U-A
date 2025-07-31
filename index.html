@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uligbek | Aydana - Свадьба</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -48,7 +49,6 @@
             transform: translateX(-50%);
         }
         
-        /* Блок с инициалами */
         .initial-letters {
             display: flex;
             justify-content: center;
@@ -92,37 +92,40 @@
         .couple-names {
             font-size: 28px;
             letter-spacing: 3px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         
         .couple-photo {
             width: 300px;
             height: 300px;
             object-fit: cover;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             display: block;
             border: 1px solid #ddd;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        /* Блок с музыкой */
+        .music-section {
+            margin-bottom: 40px;
+        }
+        
         .heart-btn {
             background: none;
             border: none;
             cursor: pointer;
-            margin: 0 auto 10px;
+            margin: 0 auto;
             font-size: 40px;
             color: #000;
             transition: all 0.3s ease;
+            display: block;
         }
         
         .heart-instruction {
             font-size: 14px;
-            margin-bottom: 40px;
+            margin-top: 10px;
             font-style: italic;
         }
         
-        /* Блок с датой */
         .date-section {
             margin-bottom: 60px;
         }
@@ -144,7 +147,6 @@
             margin: 20px auto;
         }
         
-        /* Блок с локацией */
         .restaurant-photo {
             width: 100%;
             max-width: 600px;
@@ -174,40 +176,25 @@
             transform: translateY(-3px);
         }
         
-        /* Блок с таймингом */
         .timing-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 40px 0;
-            position: relative;
-        }
-        
-        .timing-row {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
             max-width: 500px;
-            margin: 10px 0;
-            position: relative;
+            margin: 40px auto;
+            text-align: center;
         }
         
         .timing-event {
-            flex: 1;
-            text-align: center;
-            padding: 0 20px;
+            margin: 30px 0;
             opacity: 0;
-            transition: all 1s ease;
+            position: relative;
+            transition: all 0.8s ease;
         }
         
-        .timing-event.left {
-            text-align: right;
-            transform: translateX(-50px);
+        .timing-event:nth-child(1), .timing-event:nth-child(3) {
+            transform: translateX(-100px);
         }
         
-        .timing-event.right {
-            text-align: left;
-            transform: translateX(50px);
+        .timing-event:nth-child(2) {
+            transform: translateX(100px);
         }
         
         .timing-event.visible {
@@ -215,31 +202,33 @@
             transform: translateX(0);
         }
         
-        .timing-heart {
-            font-size: 20px;
-            margin: 0 10px;
-            position: relative;
-            color: #000;
-        }
-        
-        .timing-connector {
+        .timing-event::after {
+            content: "";
             position: absolute;
             left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            height: 15px;
             width: 1px;
             background-color: #000;
-            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .timing-event.visible::after {
+            opacity: 1;
         }
         
         .timing-time {
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 5px;
+            font-weight: 700;
         }
         
         .timing-desc {
-            font-size: 16px;
+            font-size: 18px;
         }
         
-        /* Форма подтверждения */
         .attendance-form {
             max-width: 500px;
             margin: 0 auto;
@@ -322,7 +311,6 @@
             color: #721c24;
         }
         
-        /* История любви */
         .love-story {
             max-width: 800px;
             margin: 0 auto;
@@ -337,7 +325,6 @@
             text-align: center;
         }
         
-        /* Таймер */
         .countdown {
             display: flex;
             justify-content: center;
@@ -361,7 +348,6 @@
             letter-spacing: 1px;
         }
         
-        /* Карта */
         .map-container {
             display: none;
             margin: 40px auto;
@@ -375,7 +361,6 @@
             border: none;
         }
         
-        /* Футер */
         .footer-letters {
             display: flex;
             justify-content: center;
@@ -433,16 +418,12 @@
                 top: 5px;
             }
             
-            .timing-event {
-                padding: 0 10px;
-            }
-            
             .timing-time {
-                font-size: 16px;
+                font-size: 20px;
             }
             
             .timing-desc {
-                font-size: 14px;
+                font-size: 16px;
             }
             
             .love-story {
@@ -450,7 +431,6 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -464,22 +444,23 @@
             <div class="divider"></div>
             <img src="couple.jpg" alt="Uligbek и Aydana" class="couple-photo">
             <div class="couple-names">Uligbek | Aydana</div>
-        </section>
-        
-        <!-- Блок 2: Черное сердце с музыкой -->
-        <section>
-            <button class="heart-btn" id="music-btn">
-                <i class="fas fa-heart"></i>
-            </button>
-            <div class="heart-instruction">(нажмите на сердце)</div>
+            
+            <!-- Черное сердечко для музыки -->
+            <div class="music-section">
+                <button class="heart-btn" id="music-btn">
+                    <i class="fas fa-heart"></i>
+                </button>
+                <div class="heart-instruction">(нажмите на сердце)</div>
+            </div>
+            
             <p class="invitation-text">Мы приглашаем вас на нашу свадьбу</p>
             <audio id="wedding-music" loop>
-                <source src="music.mp3" type="audio/mpeg">
+                <source src="wedding_music.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио элемент.
             </audio>
         </section>
         
-        <!-- Блок 3: Дата свадьбы -->
+        <!-- Блок 2: Дата свадьбы -->
         <section class="date-section">
             <h2>DATE</h2>
             <div class="horizontal-line"></div>
@@ -488,7 +469,7 @@
             <div class="horizontal-line"></div>
         </section>
         
-        <!-- Блок 4: Место проведения -->
+        <!-- Блок 3: Место проведения -->
         <section>
             <h2>LOCATION</h2>
             <h3>Ресторан "Ayziya"</h3>
@@ -500,41 +481,28 @@
             </div>
         </section>
         
-        <!-- Блок 5: Тайминг мероприятия -->
+        <!-- Блок 4: Тайминг мероприятия -->
         <section>
             <h2>TIMING</h2>
             <div class="timing-container">
-                <div class="timing-row">
-                    <div class="timing-event left">
-                        <div class="timing-time">18:00</div>
-                        <div class="timing-desc">Сбор гостей</div>
-                    </div>
-                    <div class="timing-heart">❤</div>
+                <div class="timing-event">
+                    <div class="timing-time">18:00</div>
+                    <div class="timing-desc">Сбор гостей</div>
                 </div>
                 
-                <div class="timing-connector" style="height: 50px;"></div>
-                
-                <div class="timing-row">
-                    <div class="timing-heart">❤</div>
-                    <div class="timing-event right">
-                        <div class="timing-time">18:30</div>
-                        <div class="timing-desc">Церемония</div>
-                    </div>
+                <div class="timing-event">
+                    <div class="timing-time">18:30</div>
+                    <div class="timing-desc">Церемония</div>
                 </div>
                 
-                <div class="timing-connector" style="height: 50px;"></div>
-                
-                <div class="timing-row">
-                    <div class="timing-event left">
-                        <div class="timing-time">19:00</div>
-                        <div class="timing-desc">Банкет</div>
-                    </div>
-                    <div class="timing-heart">❤</div>
+                <div class="timing-event">
+                    <div class="timing-time">19:00</div>
+                    <div class="timing-desc">Банкет</div>
                 </div>
             </div>
         </section>
         
-        <!-- Блок 6: Подтверждение присутствия -->
+        <!-- Блок 5: Подтверждение присутствия -->
         <section id="attendance">
             <h2>Подтвердите ваше присутствие</h2>
             <form id="attendance-form" class="attendance-form" action="https://formspree.io/f/hurlimanbazarbaeva19@icloud.com" method="POST">
@@ -578,7 +546,7 @@
             </form>
         </section>
         
-        <!-- Блок 7: История любви -->
+        <!-- Блок 6: История любви -->
         <section>
             <h2>LOVE STORY</h2>
             <div class="love-story">
@@ -620,7 +588,7 @@
             </div>
         </section>
         
-        <!-- Блок 8: Завершение -->
+        <!-- Блок 7: Завершение -->
         <section>
             <h2>ДО СКОРОЙ ВСТРЕЧИ</h2>
             <div class="footer-letters">
@@ -636,36 +604,20 @@
             // Управление музыкой
             const musicBtn = document.getElementById('music-btn');
             const music = document.getElementById('wedding-music');
-            let isPlaying = false;
             
             music.volume = 0.5;
-            
-            function toggleMusic() {
-                if (isPlaying) {
+
+            musicBtn.addEventListener('click', function() {
+                if (music.paused) {
+                    music.play().then(() => {
+                        musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }).catch(error => {
+                        console.error('Ошибка воспроизведения:', error);
+                    });
+                } else {
                     music.pause();
                     musicBtn.innerHTML = '<i class="fas fa-heart"></i>';
-                } else {
-                    music.play()
-                        .then(() => {
-                            musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                        })
-                        .catch(error => {
-                            alert('Пожалуйста, нажмите на сердце еще раз для воспроизведения музыки');
-                            console.error('Ошибка воспроизведения:', error);
-                        });
                 }
-                isPlaying = !isPlaying;
-            }
-            
-            // Обработчик для мобильных устройств
-            musicBtn.addEventListener('touchstart', function(e) {
-                e.preventDefault(); // Предотвращаем двойное срабатывание
-                toggleMusic();
-            }, { passive: false });
-            
-            // Обработчик для десктопов
-            musicBtn.addEventListener('click', function() {
-                toggleMusic();
             });
             
             // Карта
@@ -712,17 +664,15 @@
             
             // Анимация тайминга
             function animateTimingEvents() {
-                const timingEvents = document.querySelectorAll('.timing-event');
-                
-                timingEvents.forEach((event, index) => {
+                const events = document.querySelectorAll('.timing-event');
+                events.forEach((event, index) => {
                     setTimeout(() => {
                         event.classList.add('visible');
-                    }, index * 500);
+                    }, 300 * index);
                 });
             }
             
-            // Запуск анимации при загрузке
-            setTimeout(animateTimingEvents, 1000);
+            setTimeout(animateTimingEvents, 500);
             
             // Обработчик формы
             const form = document.getElementById('attendance-form');
