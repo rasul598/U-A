@@ -220,6 +220,12 @@
             width: 2px;
             background-color: #000;
             top: -30px;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .vertical-line-timing.visible {
+            opacity: 1;
         }
         
         .heart {
@@ -228,11 +234,17 @@
             transform: translateX(-50%);
             font-size: 24px;
             color: #000; /* Чёрное сердечко */
+            opacity: 0;
+            transition: opacity 0.8s ease;
         }
         
         .heart-1 { top: 0; }
         .heart-2 { top: 90px; }
         .heart-3 { top: 180px; }
+        
+        .heart.visible {
+            opacity: 1;
+        }
         
         .attendance-form {
             max-width: 500px;
@@ -701,11 +713,27 @@
             
             // Анимация тайминга
             function animateTimingEvents() {
+                const line = document.querySelector('.vertical-line-timing');
+                const hearts = document.querySelectorAll('.heart');
                 const events = document.querySelectorAll('.timing-event');
+                
+                // Анимация вертикальной линии
+                setTimeout(() => {
+                    line.classList.add('visible');
+                }, 0);
+                
+                // Анимация сердечек с задержкой
+                hearts.forEach((heart, index) => {
+                    setTimeout(() => {
+                        heart.classList.add('visible');
+                    }, 300 * (index + 1));
+                });
+                
+                // Анимация событий с задержкой
                 events.forEach((event, index) => {
                     setTimeout(() => {
                         event.classList.add('visible');
-                    }, 300 * index); // Задержка для последовательной анимации
+                    }, 300 * (index + 2)); // Задержка после сердечек
                 });
             }
             
