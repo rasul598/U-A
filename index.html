@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uligbek | Aydana - Свадьба</title>
+    <title>Timur & Ayzada - Свадьба</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -64,7 +64,7 @@
             line-height: 1;
         }
         
-        .letter-u {
+        .letter-t {
             left: calc(50% - 60px);
         }
         
@@ -376,7 +376,7 @@
             line-height: 1;
         }
         
-        .footer-letter-u {
+        .footer-letter-t {
             left: calc(50% - 60px);
         }
         
@@ -392,6 +392,17 @@
             width: 2px;
             background-color: #000;
             top: 10px;
+        }
+        
+        .animate-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-text.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         @media (max-width: 768px) {
@@ -437,162 +448,140 @@
         <!-- Блок 1: Главные буквы пары и фото -->
         <section>
             <div class="initial-letters">
-                <div class="letter letter-u">U</div>
+                <div class="letter letter-t">T</div>
                 <div class="vertical-line"></div>
                 <div class="letter letter-a">A</div>
             </div>
             <div class="divider"></div>
-            <img src="couple.jpg" alt="Uligbek и Aydana" class="couple-photo">
-            <div class="couple-names">Uligbek | Aydana</div>
+            <img src="couple.jpg" alt="Timur и Ayzada" class="couple-photo">
+            <div class="couple-names animate-text" data-delay="0.2">Timur & Ayzada</div>
             
             <!-- Черное сердечко для музыки -->
             <div class="music-section">
                 <button class="heart-btn" id="music-btn">
                     <i class="fas fa-heart"></i>
                 </button>
-                <div class="heart-instruction">(нажмите на сердце)</div>
+                <div class="heart-instruction animate-text" data-delay="0.4">(нажми на сердце)</div>
             </div>
             
-            <p class="invitation-text">Мы приглашаем вас на нашу свадьбу</p>
+            <p class="invitation-text animate-text" data-delay="0.6">Мы приглашаем вас на нашу свадьбу</p>
             <audio id="wedding-music" loop>
                 <source src="wedding_music.mp3" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио элемент.
+                Ваш браузер не поддерживает аудио.
             </audio>
         </section>
         
         <!-- Блок 2: Дата свадьбы -->
         <section class="date-section">
-            <h2>DATE</h2>
+            <h2 class="animate-text" data-delay="0.2">DATE</h2>
             <div class="horizontal-line"></div>
-            <div class="date">07.08.2025</div>
-            <div class="time">18:00</div>
+            <div class="date animate-text" data-delay="0.4">07.07.2025</div>
+            <div class="time animate-text" data-delay="0.6">18:00</div>
             <div class="horizontal-line"></div>
         </section>
         
         <!-- Блок 3: Место проведения -->
         <section>
-            <h2>LOCATION</h2>
-            <h3>Ресторан "Ayziya"</h3>
-            <p>ул. Аллаяра Досназарова, 319/1</p>
-            <img src="restaurant.jpg" alt="Ресторан Ayziya" class="restaurant-photo">
-            <button class="btn" id="map-btn">ПОСМОТРЕТЬ НА КАРТЕ</button>
+            <h2 class="animate-text" data-delay="0.2">LOCATION</h2>
+            <h3 class="animate-text" data-delay="0.4">Ресторан "Sultan Saray"</h3>
+            <p class="animate-text" data-delay="0.6">ул. Узбекистан, 70</p>
+            <img src="restaurant.jpg" alt="Ресторан Sultan Saray" class="restaurant-photo">
+            <button class="btn animate-text" id="map-btn" data-delay="0.8">ПОСМОТРЕТЬ НА КАРТЕ</button>
             <div class="map-container" id="map">
-                <iframe src="https://maps.google.com/maps?q=42.519722,59.6025&z=15&output=embed" allowfullscreen></iframe>
+                <iframe src="https://maps.google.com/maps?q=41.3111,69.2797&z=15&output=embed" allowfullscreen></iframe>
             </div>
         </section>
         
         <!-- Блок 4: Тайминг мероприятия -->
         <section>
-            <h2>TIMING</h2>
+            <h2 class="animate-text" data-delay="0.2">TIMING</h2>
             <div class="timing-container">
-                <div class="timing-event">
-                    <div class="timing-time">18:00</div>
-                    <div class="timing-desc">Сбор гостей</div>
+                <div class="timing-event animate-text" data-delay="0.4">
+                    <div class="timing-time">Сбор гостей</div>
+                    <div class="timing-desc">18:00</div>
                 </div>
                 
-                <div class="timing-event">
-                    <div class="timing-time">18:30</div>
-                    <div class="timing-desc">Церемония</div>
+                <div class="timing-event animate-text" data-delay="0.6">
+                    <div class="timing-time">Церемония</div>
+                    <div class="timing-desc">18:30</div>
                 </div>
                 
-                <div class="timing-event">
-                    <div class="timing-time">19:00</div>
-                    <div class="timing-desc">Банкет</div>
+                <div class="timing-event animate-text" data-delay="0.8">
+                    <div class="timing-time">Банкет</div>
+                    <div class="timing-desc">19:00</div>
                 </div>
             </div>
         </section>
         
         <!-- Блок 5: Подтверждение присутствия -->
         <section id="attendance">
-            <h2>Подтвердите ваше присутствие</h2>
-            <form id="attendance-form" class="attendance-form" action="https://formspree.io/f/hurlimanbazarbaeva19@icloud.com" method="POST">
+            <h2 class="animate-text" data-delay="0.2">Подтвердите ваше присутствие</h2>
+            <p class="animate-text" data-delay="0.4">Чтобы мы могли сделать праздник незабываемым, ответьте, пожалуйста, на несколько вопросов до 06.07.2025</p>
+            <form id="attendance-form" class="attendance-form" action="https://formspree.io/f/your-email" method="POST">
                 <div class="form-group">
-                    <label for="name">Ваше имя и фамилия*</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Ваш email</label>
-                    <input type="email" id="email" name="email">
-                </div>
-
-                <div class="form-group">
-                    <label>Вы придёте на нашу свадьбу?*</label>
+                    <label class="animate-text" data-delay="0.6">Будете ли вы присутствовать на нашем торжестве?</label>
                     <div class="radio-group">
                         <div class="radio-option">
                             <input type="radio" id="attend-yes" name="attendance" value="Да, с радостью!" required>
-                            <label for="attend-yes">Да, с радостью!</label>
+                            <label class="animate-text" data-delay="0.8" for="attend-yes">Да, с радостью!</label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" id="attend-no" name="attendance" value="К сожалению, не смогу">
-                            <label for="attend-no">Не смогу</label>
+                            <label class="animate-text" data-delay="1.0" for="attend-no">Не смогу</label>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group" id="companion-field" style="display:none;">
-                    <label for="companion">Имя вашего сопровождающего</label>
-                    <input type="text" id="companion" name="companion">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Ваши пожелания</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Отправить</button>
-                
+                <button type="submit" class="submit-btn animate-text" data-delay="1.2">Отправить</button>
                 <div id="form-message" class="form-message"></div>
             </form>
         </section>
         
         <!-- Блок 6: История любви -->
         <section>
-            <h2>LOVE STORY</h2>
+            <h2 class="animate-text" data-delay="0.2">История, которую мы пишем вместе:</h2>
             <div class="love-story">
-                <p>Дорогие и родные нашему сердцу гости,</p>
-                <p>Сегодня, делясь с вами самым важным днём нашей жизни, я хочу открыть вам сердце и рассказать историю, которая стала для меня всем — историю нашей любви с Aydana.</p>
-                <p>Это началось, казалось бы, случайно — с поездки в Ташкент на свадьбу друга. Я не знал тогда, что судьба ведёт меня к самому главному человеку в моей жизни.</p>
-                <p>Увидев её в Instagram, я почувствовал что-то необычное. Это был не просто интерес, это было глубокое чувство, ещё неосознанное, но уже живое. Через общего друга я взял её номер, отправил букет… и позвонил.</p>
-                <p>Когда я услышал её голос, всё в мире будто замерло. Спокойный, добрый, тёплый — он сразу отозвался во мне.</p>
-                <p>Так началась наша история.</p>
-                <p>Мы общались, смеялись, делились мечтами. Но были и трудности, сомнения, расстояния, испытания. Мы не сразу пришли к тому, кем мы стали. Мы строили свою любовь — не торопясь, но с каждым днём всё крепче.</p>
-                <p>У нас было всё: радость и слёзы, вдохновение и борьба, моменты, когда казалось, что весь мир — против, и моменты, когда нам было достаточно просто держаться за руки.</p>
-                <p>12 апреля, в уютной атмосфере ресторана, я сделал ей предложение — дрожащим голосом, с сердцем, бьющимся в груди.</p>
-                <p>Она сказала «Да», и это стало началом новой главы нашей истории.</p>
-                <p>Сейчас мы — единое целое. Мы вдохновляем друг друга, учимся друг у друга, мечтаем и идём вперёд, рука об руку.</p>
-                <p>И пусть впереди нас ждёт ещё многое, я уже точно знаю одно:</p>
-                <p>моя самая большая мечта сбылась — я женюсь на девушке, которую люблю всей душой.</p>
-                <p>Спасибо каждому из вас за то, что вы рядом. Ваше присутствие наполняет этот день светом, теплом и незабываемыми чувствами.</p>
-                <p>С бесконечной любовью и благодарностью, Uligbek</p>
+                <p class="animate-text" data-delay="0.4">Дорогие и родные нашему сердцу гости, Сегодня, делясь с вами самым важным днём нашей жизни, я хочу открыть вам сердце и рассказать историю, которая стала для меня всем — историю нашей любви с Айзадой.</p>
+                <p class="animate-text" data-delay="0.6">Это началось, казалось бы, случайно — с поездки в Ташкент на свадьбу друга. Я не знал тогда, что судьба ведёт меня к самому главному человеку в моей жизни.</p>
+                <p class="animate-text" data-delay="0.8">Увидев её в Instagram, я почувствовал что-то необычное. Это был не просто интерес, это было глубокое чувство, ещё неосознанное, но уже живое. Через общего друга я взял её номер, отправил букет… и позвонил.</p>
+                <p class="animate-text" data-delay="1.0">Когда я услышал её голос, всё в мире будто замерло. Спокойный, добрый, тёплый — он сразу отозвался во мне.</p>
+                <p class="animate-text" data-delay="1.2">Так началась наша история.</p>
+                <p class="animate-text" data-delay="1.4">Мы общались, смеялись, делились мечтами. Но были и трудности, сомнения, расстояния, испытания. Мы не сразу пришли к тому, кем мы стали. Мы строили свою любовь — не торопясь, но с каждым днём всё крепче.</p>
+                <p class="animate-text" data-delay="1.6">У нас было всё: радость и слёзы, вдохновение и борьба, моменты, когда казалось, что весь мир — против, и моменты, когда нам было достаточно просто держаться за руки.</p>
+                <p class="animate-text" data-delay="1.8">12 апреля, в уютной атмосфере ресторана, я сделал ей предложение — дрожащим голосом, с сердцем, бьющимся в груди.</p>
+                <p class="animate-text" data-delay="2.0">Она сказала «Да», и это стало началом новой главы нашей истории.</p>
+                <p class="animate-text" data-delay="2.2">Сейчас мы — единое целое. Мы вдохновляем друг друга, учимся друг у друга, мечтаем и идём вперёд, рука об руку.</p>
+                <p class="animate-text" data-delay="2.4">И пусть впереди нас ждёт ещё многое, я уже точно знаю одно:</p>
+                <p class="animate-text" data-delay="2.6">моя самая большая мечта сбылась — я женюсь на девушке, которую люблю всей душой.</p>
+                <p class="animate-text" data-delay="2.8">Спасибо каждому из вас за то, что вы рядом. Ваше присутствие наполняет этот день светом, теплом и незабываемыми чувствами.</p>
+                <p class="animate-text" data-delay="3.0">С бесконечной любовью и благодарностью, Тимур</p>
             </div>
             
-            <h3>До нашей свадьбы осталось</h3>
+            <h3 class="animate-text" data-delay="3.2">До нашей свадьбы осталось</h3>
             <div class="countdown">
                 <div class="countdown-item">
-                    <div class="countdown-number" id="days">00</div>
-                    <div class="countdown-label">Дней</div>
+                    <div class="countdown-number animate-text" data-delay="3.4" id="days">86</div>
+                    <div class="countdown-label animate-text" data-delay="3.6">Дней</div>
                 </div>
                 <div class="countdown-item">
-                    <div class="countdown-number" id="hours">00</div>
-                    <div class="countdown-label">Часов</div>
+                    <div class="countdown-number animate-text" data-delay="3.8" id="hours">04</div>
+                    <div class="countdown-label animate-text" data-delay="4.0">Часов</div>
                 </div>
                 <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">00</div>
-                    <div class="countdown-label">Минут</div>
+                    <div class="countdown-number animate-text" data-delay="4.2" id="minutes">54</div>
+                    <div class="countdown-label animate-text" data-delay="4.4">Минут</div>
                 </div>
                 <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">Секунд</div>
+                    <div class="countdown-number animate-text" data-delay="4.6" id="seconds">27</div>
+                    <div class="countdown-label animate-text" data-delay="4.8">Секунд</div>
                 </div>
             </div>
         </section>
         
         <!-- Блок 7: Завершение -->
         <section>
-            <h2>ДО СКОРОЙ ВСТРЕЧИ</h2>
+            <h2 class="animate-text" data-delay="0.2">До скорой встречи</h2>
             <div class="footer-letters">
-                <div class="footer-letter footer-letter-u">U</div>
+                <div class="footer-letter footer-letter-t">T</div>
                 <div class="footer-line"></div>
                 <div class="footer-letter footer-letter-a">A</div>
             </div>
@@ -634,19 +623,28 @@
                 }
             });
             
-            // Поле для сопровождающего
-            document.querySelectorAll('input[name="attendance"]').forEach(radio => {
-                radio.addEventListener('change', function() {
-                    document.getElementById('companion-field').style.display = 
-                        this.value === 'Да, с радостью!' ? 'block' : 'none';
-                });
+            // Анимация текста
+            const animateElements = document.querySelectorAll('.animate-text');
+            animateElements.forEach((element, index) => {
+                const delay = parseFloat(element.getAttribute('data-delay') || 0);
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, delay * 1000);
             });
             
             // Таймер
             function updateCountdown() {
-                const weddingDate = new Date('2025-08-07T18:00:00');
+                const weddingDate = new Date('2025-07-07T18:00:00+05:00');
                 const now = new Date();
                 const diff = weddingDate - now;
+                
+                if (diff <= 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
                 
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -661,18 +659,6 @@
             
             setInterval(updateCountdown, 1000);
             updateCountdown();
-            
-            // Анимация тайминга
-            function animateTimingEvents() {
-                const events = document.querySelectorAll('.timing-event');
-                events.forEach((event, index) => {
-                    setTimeout(() => {
-                        event.classList.add('visible');
-                    }, 300 * index);
-                });
-            }
-            
-            setTimeout(animateTimingEvents, 500);
             
             // Обработчик формы
             const form = document.getElementById('attendance-form');
