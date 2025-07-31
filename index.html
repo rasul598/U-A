@@ -497,18 +497,18 @@
             <h2 class="animate-text" data-delay="0.2">TIMING</h2>
             <div class="timing-container">
                 <div class="timing-event animate-text" data-delay="0.4">
-                    <div class="timing-time">Сбор гостей</div>
-                    <div class="timing-desc">18:00</div>
+                    <div class="timing-time">18:00</div>
+                    <div class="timing-desc">Сбор гостей</div>
                 </div>
                 
                 <div class="timing-event animate-text" data-delay="0.6">
-                    <div class="timing-time">Церемония</div>
-                    <div class="timing-desc">18:30</div>
+                    <div class="timing-time">18:30</div>
+                    <div class="timing-desc">Церемония</div>
                 </div>
                 
                 <div class="timing-event animate-text" data-delay="0.8">
-                    <div class="timing-time">Банкет</div>
-                    <div class="timing-desc">19:00</div>
+                    <div class="timing-time">19:00</div>
+                    <div class="timing-desc">Банкет</div>
                 </div>
             </div>
         </section>
@@ -631,6 +631,18 @@
                     element.classList.add('visible');
                 }, delay * 1000);
             });
+            
+            // Анимация тайминга
+            function animateTimingEvents() {
+                const events = document.querySelectorAll('.timing-event');
+                events.forEach((event, index) => {
+                    setTimeout(() => {
+                        event.classList.add('visible');
+                    }, 300 * index);
+                });
+            }
+            
+            setTimeout(animateTimingEvents, 500);
             
             // Таймер
             function updateCountdown() {
