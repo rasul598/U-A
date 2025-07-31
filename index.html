@@ -184,22 +184,7 @@
         
         .timing-event {
             margin: 30px 0;
-            opacity: 0;
             position: relative;
-            transition: all 0.8s ease;
-        }
-        
-        .timing-event:nth-child(1), .timing-event:nth-child(3) {
-            transform: translateX(-100px);
-        }
-        
-        .timing-event:nth-child(2) {
-            transform: translateX(100px);
-        }
-        
-        .timing-event.visible {
-            opacity: 1;
-            transform: translateX(0);
         }
         
         .timing-event::after {
@@ -211,11 +196,6 @@
             height: 15px;
             width: 1px;
             background-color: #000;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-        
-        .timing-event.visible::after {
             opacity: 1;
         }
         
@@ -394,17 +374,6 @@
             top: 10px;
         }
         
-        .animate-text {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .animate-text.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         @media (max-width: 768px) {
             .letter, .footer-letter {
                 font-size: 48px;
@@ -454,17 +423,17 @@
             </div>
             <div class="divider"></div>
             <img src="couple.jpg" alt="Ulugbek и Ayzada" class="couple-photo">
-            <div class="couple-names animate-text" data-delay="0.2">Ulugbek & Ayzada</div>
+            <div class="couple-names">Ulugbek & Ayzada</div>
             
             <!-- Черное сердечко для музыки -->
             <div class="music-section">
                 <button class="heart-btn" id="music-btn">
                     <i class="fas fa-heart"></i>
                 </button>
-                <div class="heart-instruction animate-text" data-delay="0.4">(нажми на сердце)</div>
+                <div class="heart-instruction">(нажми на сердце)</div>
             </div>
             
-            <p class="invitation-text animate-text" data-delay="0.6">Мы приглашаем вас на нашу свадьбу</p>
+            <p class="invitation-text">Мы приглашаем вас на нашу свадьбу</p>
             <audio id="wedding-music" loop>
                 <source src="wedding_music.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио.
@@ -473,20 +442,20 @@
         
         <!-- Блок 2: Дата свадьбы -->
         <section class="date-section">
-            <h2 class="animate-text" data-delay="0.2">DATE</h2>
+            <h2>DATE</h2>
             <div class="horizontal-line"></div>
-            <div class="date animate-text" data-delay="0.4">07.07.2025</div>
-            <div class="time animate-text" data-delay="0.6">18:00</div>
+            <div class="date">07.07.2025</div>
+            <div class="time">18:00</div>
             <div class="horizontal-line"></div>
         </section>
         
         <!-- Блок 3: Место проведения -->
         <section>
-            <h2 class="animate-text" data-delay="0.2">LOCATION</h2>
-            <h3 class="animate-text" data-delay="0.4">Ресторан "Sultan Saray"</h3>
-            <p class="animate-text" data-delay="0.6">ул. Узбекистан, 70</p>
+            <h2>LOCATION</h2>
+            <h3>Ресторан "Sultan Saray"</h3>
+            <p>ул. Узбекистан, 70</p>
             <img src="restaurant.jpg" alt="Ресторан Sultan Saray" class="restaurant-photo">
-            <button class="btn animate-text" id="map-btn" data-delay="0.8">ПОСМОТРЕТЬ НА КАРТЕ</button>
+            <button class="btn" id="map-btn">ПОСМОТРЕТЬ НА КАРТЕ</button>
             <div class="map-container" id="map">
                 <iframe src="https://maps.google.com/maps?q=41.3111,69.2797&z=15&output=embed" allowfullscreen></iframe>
             </div>
@@ -494,19 +463,19 @@
         
         <!-- Блок 4: Тайминг мероприятия -->
         <section>
-            <h2 class="animate-text" data-delay="0.2">TIMING</h2>
+            <h2>TIMING</h2>
             <div class="timing-container">
-                <div class="timing-event animate-text" data-delay="0.4">
+                <div class="timing-event">
                     <div class="timing-time">18:00</div>
                     <div class="timing-desc">Сбор гостей</div>
                 </div>
                 
-                <div class="timing-event animate-text" data-delay="0.6">
+                <div class="timing-event">
                     <div class="timing-time">18:30</div>
                     <div class="timing-desc">Церемония</div>
                 </div>
                 
-                <div class="timing-event animate-text" data-delay="0.8">
+                <div class="timing-event">
                     <div class="timing-time">19:00</div>
                     <div class="timing-desc">Банкет</div>
                 </div>
@@ -515,71 +484,71 @@
         
         <!-- Блок 5: Подтверждение присутствия -->
         <section id="attendance">
-            <h2 class="animate-text" data-delay="0.2">Подтвердите ваше присутствие</h2>
-            <p class="animate-text" data-delay="0.4">Чтобы мы могли сделать праздник незабываемым, ответьте, пожалуйста, на несколько вопросов до 06.07.2025</p>
+            <h2>Подтвердите ваше присутствие</h2>
+            <p>Чтобы мы могли сделать праздник незабываемым, ответьте, пожалуйста, на несколько вопросов до 06.07.2025</p>
             <form id="attendance-form" class="attendance-form" action="https://formspree.io/f/your-email" method="POST">
                 <div class="form-group">
-                    <label class="animate-text" data-delay="0.6">Будете ли вы присутствовать на нашем торжестве?</label>
+                    <label>Будете ли вы присутствовать на нашем торжестве?</label>
                     <div class="radio-group">
                         <div class="radio-option">
                             <input type="radio" id="attend-yes" name="attendance" value="Да, с радостью!" required>
-                            <label class="animate-text" data-delay="0.8" for="attend-yes">Да, с радостью!</label>
+                            <label for="attend-yes">Да, с радостью!</label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" id="attend-no" name="attendance" value="К сожалению, не смогу">
-                            <label class="animate-text" data-delay="1.0" for="attend-no">Не смогу</label>
+                            <label for="attend-no">Не смогу</label>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="submit-btn animate-text" data-delay="1.2">Отправить</button>
+                <button type="submit" class="submit-btn">Отправить</button>
                 <div id="form-message" class="form-message"></div>
             </form>
         </section>
         
         <!-- Блок 6: История любви -->
         <section>
-            <h2 class="animate-text" data-delay="0.2">История, которую мы пишем вместе:</h2>
+            <h2>История, которую мы пишем вместе:</h2>
             <div class="love-story">
-                <p class="animate-text" data-delay="0.4">Дорогие и родные нашему сердцу гости, Сегодня, делясь с вами самым важным днём нашей жизни, я хочу открыть вам сердце и рассказать историю, которая стала для меня всем — историю нашей любви с Айзадой.</p>
-                <p class="animate-text" data-delay="0.6">Это началось, казалось бы, случайно — с поездки в Ташкент на свадьбу друга. Я не знал тогда, что судьба ведёт меня к самому главному человеку в моей жизни.</p>
-                <p class="animate-text" data-delay="0.8">Увидев её в Instagram, я почувствовал что-то необычное. Это был не просто интерес, это было глубокое чувство, ещё неосознанное, но уже живое. Через общего друга я взял её номер, отправил букет… и позвонил.</p>
-                <p class="animate-text" data-delay="1.0">Когда я услышал её голос, всё в мире будто замерло. Спокойный, добрый, тёплый — он сразу отозвался во мне.</p>
-                <p class="animate-text" data-delay="1.2">Так началась наша история.</p>
-                <p class="animate-text" data-delay="1.4">Мы общались, смеялись, делились мечтами. Но были и трудности, сомнения, расстояния, испытания. Мы не сразу пришли к тому, кем мы стали. Мы строили свою любовь — не торопясь, но с каждым днём всё крепче.</p>
-                <p class="animate-text" data-delay="1.6">У нас было всё: радость и слёзы, вдохновение и борьба, моменты, когда казалось, что весь мир — против, и моменты, когда нам было достаточно просто держаться за руки.</p>
-                <p class="animate-text" data-delay="1.8">12 апреля, в уютной атмосфере ресторана, я сделал ей предложение — дрожащим голосом, с сердцем, бьющимся в груди.</p>
-                <p class="animate-text" data-delay="2.0">Она сказала «Да», и это стало началом новой главы нашей истории.</p>
-                <p class="animate-text" data-delay="2.2">Сейчас мы — единое целое. Мы вдохновляем друг друга, учимся друг у друга, мечтаем и идём вперёд, рука об руку.</p>
-                <p class="animate-text" data-delay="2.4">И пусть впереди нас ждёт ещё многое, я уже точно знаю одно:</p>
-                <p class="animate-text" data-delay="2.6">моя самая большая мечта сбылась — я женюсь на девушке, которую люблю всей душой.</p>
-                <p class="animate-text" data-delay="2.8">Спасибо каждому из вас за то, что вы рядом. Ваше присутствие наполняет этот день светом, теплом и незабываемыми чувствами.</p>
-                <p class="animate-text" data-delay="3.0">С бесконечной любовью и благодарностью, Ulugbek</p>
+                <p>Дорогие и родные нашему сердцу гости, Сегодня, делясь с вами самым важным днём нашей жизни, я хочу открыть вам сердце и рассказать историю, которая стала для меня всем — историю нашей любви с Айзадой.</p>
+                <p>Это началось, казалось бы, случайно — с поездки в Ташкент на свадьбу друга. Я не знал тогда, что судьба ведёт меня к самому главному человеку в моей жизни.</p>
+                <p>Увидев её в Instagram, я почувствовал что-то необычное. Это был не просто интерес, это было глубокое чувство, ещё неосознанное, но уже живое. Через общего друга я взял её номер, отправил букет… и позвонил.</p>
+                <p>Когда я услышал её голос, всё в мире будто замерло. Спокойный, добрый, тёплый — он сразу отозвался во мне.</p>
+                <p>Так началась наша история.</p>
+                <p>Мы общались, смеялись, делились мечтами. Но были и трудности, сомнения, расстояния, испытания. Мы не сразу пришли к тому, кем мы стали. Мы строили свою любовь — не торопясь, но с каждым днём всё крепче.</p>
+                <p>У нас было всё: радость и слёзы, вдохновение и борьба, моменты, когда казалось, что весь мир — против, и моменты, когда нам было достаточно просто держаться за руки.</p>
+                <p>12 апреля, в уютной атмосфере ресторана, я сделал ей предложение — дрожащим голосом, с сердцем, бьющимся в груди.</p>
+                <p>Она сказала «Да», и это стало началом новой главы нашей истории.</p>
+                <p>Сейчас мы — единое целое. Мы вдохновляем друг друга, учимся друг у друга, мечтаем и идём вперёд, рука об руку.</p>
+                <p>И пусть впереди нас ждёт ещё многое, я уже точно знаю одно:</p>
+                <p>моя самая большая мечта сбылась — я женюсь на девушке, которую люблю всей душой.</p>
+                <p>Спасибо каждому из вас за то, что вы рядом. Ваше присутствие наполняет этот день светом, теплом и незабываемыми чувствами.</p>
+                <p>С бесконечной любовью и благодарностью, Ulugbek</p>
             </div>
             
-            <h3 class="animate-text" data-delay="3.2">До нашей свадьбы осталось</h3>
+            <h3>До нашей свадьбы осталось</h3>
             <div class="countdown">
                 <div class="countdown-item">
-                    <div class="countdown-number animate-text" data-delay="3.4" id="days">86</div>
-                    <div class="countdown-label animate-text" data-delay="3.6">Дней</div>
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Дней</div>
                 </div>
                 <div class="countdown-item">
-                    <div class="countdown-number animate-text" data-delay="3.8" id="hours">04</div>
-                    <div class="countdown-label animate-text" data-delay="4.0">Часов</div>
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Часов</div>
                 </div>
                 <div class="countdown-item">
-                    <div class="countdown-number animate-text" data-delay="4.2" id="minutes">54</div>
-                    <div class="countdown-label animate-text" data-delay="4.4">Минут</div>
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Минут</div>
                 </div>
                 <div class="countdown-item">
-                    <div class="countdown-number animate-text" data-delay="4.6" id="seconds">27</div>
-                    <div class="countdown-label animate-text" data-delay="4.8">Секунд</div>
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Секунд</div>
                 </div>
             </div>
         </section>
         
         <!-- Блок 7: Завершение -->
         <section>
-            <h2 class="animate-text" data-delay="0.2">До скорой встречи</h2>
+            <h2>До скорой встречи</h2>
             <div class="footer-letters">
                 <div class="footer-letter footer-letter-u">U</div>
                 <div class="footer-line"></div>
@@ -622,27 +591,6 @@
                     mapBtn.textContent = 'СКРЫТЬ КАРТУ';
                 }
             });
-            
-            // Анимация текста
-            const animateElements = document.querySelectorAll('.animate-text');
-            animateElements.forEach((element, index) => {
-                const delay = parseFloat(element.getAttribute('data-delay') || 0);
-                setTimeout(() => {
-                    element.classList.add('visible');
-                }, delay * 1000);
-            });
-            
-            // Анимация тайминга
-            function animateTimingEvents() {
-                const events = document.querySelectorAll('.timing-event');
-                events.forEach((event, index) => {
-                    setTimeout(() => {
-                        event.classList.add('visible');
-                    }, 300 * index);
-                });
-            }
-            
-            setTimeout(animateTimingEvents, 500);
             
             // Таймер
             function updateCountdown() {
