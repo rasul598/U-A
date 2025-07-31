@@ -179,33 +179,60 @@
             max-width: 500px;
             margin: 40px auto;
             text-align: center;
+            position: relative;
         }
         
         .timing-event {
             margin: 30px 0;
             opacity: 0;
-            transform: translateX(-100px);
             transition: all 0.8s ease;
-        }
-        
-        .timing-event:nth-child(even) {
-            transform: translateX(100px);
-        }
-        
-        .timing-event.visible {
-            opacity: 1;
-            transform: translateX(0);
         }
         
         .timing-time {
             font-size: 24px;
             margin-bottom: 5px;
             font-weight: 700;
+            position: absolute;
+            left: -200px; /* Начальная позиция слева */
         }
         
         .timing-desc {
             font-size: 18px;
+            position: absolute;
+            left: -200px; /* Начальная позиция слева */
         }
+        
+        .timing-event.ceremony {
+            left: 200px; /* Начальная позиция справа для церемонии */
+        }
+        
+        .timing-event.visible {
+            opacity: 1;
+            left: 50%; /* Конечная позиция в центре */
+            transform: translateX(-50%);
+        }
+        
+        .vertical-line-timing {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 180px; /* Высота линии для трёх событий */
+            width: 2px;
+            background-color: #000;
+            top: -30px;
+        }
+        
+        .heart {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #000; /* Чёрное сердечко */
+        }
+        
+        .heart-1 { top: 0; }
+        .heart-2 { top: 90px; }
+        .heart-3 { top: 180px; }
         
         .attendance-form {
             max-width: 500px;
@@ -482,16 +509,18 @@
         <section>
             <h2>TIMING</h2>
             <div class="timing-container">
+                <div class="vertical-line-timing"></div>
+                <div class="heart heart-1">♥</div>
                 <div class="timing-event">
                     <div class="timing-time">18:00</div>
                     <div class="timing-desc">Сбор гостей</div>
                 </div>
-                
-                <div class="timing-event">
+                <div class="heart heart-2">♥</div>
+                <div class="timing-event ceremony">
                     <div class="timing-time">18:30</div>
                     <div class="timing-desc">Церемония</div>
                 </div>
-                
+                <div class="heart heart-3">♥</div>
                 <div class="timing-event">
                     <div class="timing-time">19:00</div>
                     <div class="timing-desc">Банкет</div>
@@ -676,7 +705,7 @@
                 events.forEach((event, index) => {
                     setTimeout(() => {
                         event.classList.add('visible');
-                    }, 300 * index);
+                    }, 300 * index); // Задержка для последовательной анимации
                 });
             }
             
